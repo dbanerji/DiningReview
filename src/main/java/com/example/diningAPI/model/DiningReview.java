@@ -5,30 +5,37 @@ import lombok.*;
 
 
 @Entity
-@Table(name="DININGREVIEW")
+@Getter
+@Setter
+@Table(name="DINING_REVIEW")
 @RequiredArgsConstructor
 public class DiningReview {
 
-    @Column @Getter @Setter
-    private String reviewerName;
 
     @Id
     @GeneratedValue
-    @Getter @Setter
-    private Long Id;
+    @Column(name = "ID")
+    private Long id;
 
-    @Column @Getter @Setter
+    @Column(name = "REVIEWER_NAME")
+    private String reviewerName;
+
+    @Column(name = "RESTAURANT_ID")
+    private Long restaurantId;
+
+    @Column(name = "PEANUT_SCORE")
     private int peanutScore;
 
-    @Column @Getter @Setter
+    @Column(name = "EGG_SCORE")
     private int eggScore;
 
-    @Column @Getter @Setter
+    @Column(name = "DAIRY_SCORE")
     private int dairyScore;
 
-    @Column @Getter @Setter
+    @Column(name = "COMMENTARY")
     private String commentary;
 
-    @Column @Getter @Setter
-    private ReviewStatus status;
+    @Column(name = "REVIEW_STATUS")
+    @Enumerated(EnumType.STRING)
+    private ReviewStatus reviewStatus;
 }

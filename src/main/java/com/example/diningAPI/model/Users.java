@@ -9,45 +9,36 @@ import lombok.Setter;
 
 @Entity
 @Table(name="USERS")
+@Getter
+@Setter
 @RequiredArgsConstructor
 public class Users {
 
-    @Column(unique = true)
-    @Getter
-    @Setter
-    @NonNull
+    @Column(name = "DISPLAY_NAME")
     private String displayName;
 
     @Id
     @GeneratedValue
-    @Getter @Setter
-    @NonNull
+    @Column(name = "ID")
     private Long Id;
 
-    @Column
-    @Getter @Setter
+    @Column(name="CITY")
     private String city;
 
-    @Column
-    @Getter @Setter
+    @Column(name = "STATE")
     private String state;
 
-    @Column
-    @Getter @Setter
+    @Column(name = "ZIP_CODE")
     private String zipcode;
 
-    @Column
-    @Getter @Setter
-    private boolean peanutallergiesreview;
+    @Column(name = "PEANUT_ALLERGY")
+    private boolean peanutAllergy;
 
-    @Column
-    @Getter @Setter
-    private boolean eggallergiesreview;
+    @Column(name = "EGG_ALLERGY")
+    private boolean eggAllergy;
 
-    @Column
-    @Getter @Setter
-    private boolean dairyallergiesreview;
-
+    @Column(name = "DAIRYALLERGY")
+    private boolean dairyAllergy;
 
 
 }

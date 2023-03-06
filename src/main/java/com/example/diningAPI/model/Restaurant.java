@@ -5,47 +5,26 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
+@Getter
+@Setter
 @Table(name="RESTAURANT")
 @RequiredArgsConstructor
 public class Restaurant {
 
     @Id
     @GeneratedValue
-    @Getter
-    @Setter
     @NonNull
     private Long id;
 
-    @Column
-    @Getter
-    @Setter
+    @Column(name = "NAME")
     @NonNull
     private String name;
 
-    @Column
-    @Getter
-    @Setter
+    @Column(name = "CUISINE")
     @NonNull
     private String cuisine;
 
-    @Column
-    @Getter
-    @Setter
-    private int peanutAllergyScore;
-
-    @Column
-    @Getter
-    @Setter
-    private int eggAllergyScore;
-
-    @Column
-    @Getter
-    @Setter
-    private int dairyAllergyScore;
-
-    @Column
-    @Getter
-    @Setter
-    private int overallScore;
+    @Column(name = "LOCATION")
+    private String location;
 
 }
